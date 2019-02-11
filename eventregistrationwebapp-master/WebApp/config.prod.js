@@ -2,11 +2,11 @@
 exports.creds = {
   // Required. It must be tenant-specific endpoint, common endpoint is not supported to use B2C
   // feature.
-  identityMetadata: 'https://login.microsoftonline.com/anildwaaadb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
+  identityMetadata: 'https://login.microsoftonline.com/payalsb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
   // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/v2.0/.well-known/openid-configuration'
 
   // Required, the client ID of your app in AAD  
-  clientID: 'e0dff836-6c56-4c6e-928c-8c60a9d29137',
+  clientID: '404852770059073',
 
   // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token' 
   // If you want to get access_token, you must be 'code', 'code id_token' or 'id_token code'
@@ -23,7 +23,7 @@ exports.creds = {
   
   // Required if `responseType` is 'code', 'id_token code' or 'code id_token'. 
   // If app key contains '\', replace it with '\\'.
-  clientSecret: '', 
+  clientSecret: '77de6f9cc1f68aae66e0f9a50cf5bae1', 
 
   // Required, must be true for B2C
   isB2C: true,
