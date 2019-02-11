@@ -2,11 +2,11 @@
 exports.creds = {
   // Required. It must be tenant-specific endpoint, common endpoint is not supported to use B2C
   // feature.
-  identityMetadata: 'https://login.microsoftonline.com/anildwaaadb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
+  identityMetadata: 'https://login.microsoftonline.com/payalsb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration', 
   // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/v2.0/.well-known/openid-configuration'
 
   // Required, the client ID of your app in AAD  
-  clientID: 'e0dff836-6c56-4c6e-928c-8c60a9d29137',
+  clientID: '1b20fea5-ea6c-4dc8-af3b-f462e4ebcbe0',
 
   // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token' 
   // If you want to get access_token, you must be 'code', 'code id_token' or 'id_token code'
@@ -16,7 +16,7 @@ exports.creds = {
   responseMode: 'form_post', 
 
   // Required, the reply URL registered in AAD for your app
-  redirectUrl: 'https://localhost:3443/auth/openid/return', 
+  redirectUrl: 'https://payals-webapp.azurewebsites.net/auth/openid/return', 
 
   // Required if we use http for redirectUrl
   allowHttpForRedirectUrl: true,
