@@ -6,7 +6,7 @@ exports.creds = {
   // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/v2.0/.well-known/openid-configuration'
 
   // Required, the client ID of your app in AAD  
-  clientID: '404852770059073',
+  clientID: '1b20fea5-ea6c-4dc8-af3b-f462e4ebcbe0',
 
   // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token' 
   // If you want to get access_token, you must be 'code', 'code id_token' or 'id_token code'
