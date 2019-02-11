@@ -84,7 +84,7 @@ exports.useMongoDBSessionStore = false;
 // If you want to use mongoDB, provide the uri here for the database.
 exports.databaseUri = 'mongodb://localhost/OIDCStrategy';
 
-exports.eventsDatabase = '';
+exports.eventsDatabase = 'mongodb://glwebapp:L0dxEUMe5MX0XmCSTmwXn5fymjU14p4ozj8UjlPlmd471BltVCw4QIHaEPBjuoMVRYYlDrzzSyv8tOMw4Txc9g==@glwebapp.documents.azure.com:10255/database-1?ssl=true&replicaSet=globaldb';
 
 // How long you want to keep session in mongoDB.
 exports.mongoDBSessionMaxAge = 24 * 60 * 60;  // 1 day (unit is second)
