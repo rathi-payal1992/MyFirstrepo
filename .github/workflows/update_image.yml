@@ -22,11 +22,11 @@ jobs:
         run: |
           #docker pull python:3.10.7-alpine
           docker build -t python:modified
-          docker save -o ~/image-cache/modified.tar alpine
+          docker save -o ~/image-cache/alpine.tar alpine
  
       - name: docker load
         if: steps.image-cache.outputs.cache-hit == 'true'
-        run: docker load -i ~/image-cache/modified.tar
+        run: docker load -i ~/image-cache/alpine.tar
  
       - name: 'Run tests'
         run: |
