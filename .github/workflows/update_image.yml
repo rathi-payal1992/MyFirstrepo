@@ -2,34 +2,46 @@ name: build image
  
 on:
   workflow_dispatch:
- 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
- 
-      - name: docker build and Push
-        if: steps.image-cache.outputs.cache-hit != 'true'
-        uses: docker/build-push-action@v5
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
         with:
           context: .
-          push: false
-          tags: "alpine:latest"
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
- 
-      - name: docker load
-        if: steps.image-cache.outputs.cache-hit == 'true'
-        run: docker load -i ACTIONS_CACHE_URL/alpine:latest
- 
-  test:
-      runs-on: ACTIONS_CACHE_URL/alpine:latest
-      steps: 
-        
-      - name: Set up Docker Buildx
-        run: ls -ltr
-        
+          file: ./Dockerfile
+          tags: myimage:latest
+          outputs: type=docker,dest=/tmp/myimage.tar
+      -
+        name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: myimage
+          path: /tmp/myimage.tar
+
+  use:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: myimage
+          path: /tmp
+      -
+        name: Load Docker image
+        run: |
+          docker load --input /tmp/myimage.tar
+          docker image ls -a
