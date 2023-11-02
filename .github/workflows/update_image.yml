@@ -20,14 +20,15 @@ jobs:
       - name: docker pull
         if: steps.image-cache.outputs.cache-hit != 'true'
         run: |
-          docker pull python:3.10.7-alpine
-          docker save -o ~/image-cache/alpine.tar alpine
+          #docker pull python:3.10.7-alpine
+          docker build -t python:modified
+          docker save -o ~/image-cache/modified.tar alpine
  
       - name: docker load
         if: steps.image-cache.outputs.cache-hit == 'true'
-        run: docker load -i ~/image-cache/alpine.tar
+        run: docker load -i ~/image-cache/modified.tar
  
       - name: 'Run tests'
         run: |
-          cd ~/image-cache
+          #cd ~/image-cache
           ls -ltr
