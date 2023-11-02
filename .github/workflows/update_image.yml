@@ -28,7 +28,8 @@ jobs:
  
   test:
       runs-on: ACTIONS_CACHE_URL/alpine:latest
-      steps:      
-        -name: list folders
-         run:  ls -ltr
+      steps: 
+        
+      - name: Set up Docker Buildx
+        run: ls -ltr
         
