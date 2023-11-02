@@ -7,28 +7,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
  
-      - name: create directory
-        run: mkdir -p ~/image-cache
-      - id: image-cache
-        uses: actions/cache@v3
-        with:
-          path: ~/image-cache
-          key: image-cache-${{ runner.os }}
- 
-      - name: docker pull
+      - name: docker build and Push
         if: steps.image-cache.outputs.cache-hit != 'true'
-        run: |
-          #docker pull python:3.10.7-alpine
-          docker build -t python:modified
-          docker save -o ~/image-cache/alpine.tar alpine
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: "alpine:latest"
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
  
       - name: docker load
         if: steps.image-cache.outputs.cache-hit == 'true'
-        run: docker load -i ~/image-cache/alpine.tar
+        run: docker load -i ACTIONS_CACHE_URL/alpine:latest
  
-      - name: 'Run tests'
-        run: |
-          #cd ~/image-cache
-          ls -ltr
+  test:
+      runs-on: ACTIONS_CACHE_URL/alpine:latest
+      steps:      
+        -name: list folders
+         run:  ls -ltr
+        
