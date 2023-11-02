@@ -1,9 +1,9 @@
 FROM python:3.10.7-alpine
-#COPY requirements.txt .
+COPY requirements.txt .
 #COPY allianz-ca.crt /usr/local/share/ca-certificates/
 RUN pip3 install --upgrade pip
 RUN apk add curl bash build-base git ca-certificates openssh-client
-RUN update-ca-certificates
+#RUN update-ca-certificates
 RUN pip3 install -r requirements.txt
 RUN ansible-galaxy collection install cisco.aci
 RUN ansible-galaxy collection install cisco.mso
