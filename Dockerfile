@@ -4,7 +4,7 @@ COPY requirements.txt .
 RUN pip3 install --upgrade pip
 RUN apk add curl bash build-base git ca-certificates openssh-client
 #RUN update-ca-certificates
-RUN pip3 install -r requirements.txt
+#RUN pip3 install -r requirements.txt
 RUN ansible-galaxy collection install cisco.aci
 RUN ansible-galaxy collection install cisco.mso
 RUN ansible-galaxy collection install cisco.nd
