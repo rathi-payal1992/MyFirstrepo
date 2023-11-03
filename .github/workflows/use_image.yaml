@@ -16,10 +16,7 @@ jobs:
           workflow: update_image.yml
           name: myimage-${{ github.sha }}
           
-      - name: download artifact 2
-        uses: actions/download-artifact@v3
-        with:
-          name: myimage-${{ github.sha }}
+      
 
           
       
@@ -28,5 +25,5 @@ jobs:
           docker load --input myimage.tar
           docker image ls -a
           docker container run -d --name ansible myimage:latest
-          docker exec -it ansible /bin/bash
+          docker exec -t ansible /bin/bash
           ansible-playbook 
