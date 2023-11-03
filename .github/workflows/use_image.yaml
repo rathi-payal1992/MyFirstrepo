@@ -24,6 +24,8 @@ jobs:
         run: |
           docker load --input myimage.tar
           docker image ls -a
-          docker container run -d --name ansible myimage:latest
-          docker exec -t ansible /bin/bash
-          ansible-playbook 
+      - name: Run container using this image
+        uses: addnab/docker-run-action@v3
+        with:
+          image: myimage:latest
+          run: ls -ltr   
