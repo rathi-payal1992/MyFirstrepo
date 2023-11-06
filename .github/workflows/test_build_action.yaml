@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - uses: actions/MyFirstrepo@v1
+      - uses: MyFirstrepo@v1
         
      
