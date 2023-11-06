@@ -1,0 +1,57 @@
+name: 'Build and Ansible Collection'
+description: 'build ansible collection'
+inputs:
+  repo-to-pick-code-from:  # id of input
+    description: 'code repository'
+    required: true
+    default: 'Worldgit@github.com:rathi-payal1992/MyFirstrepo.git'
+  code-repo-branch: 
+    description: 'code repo branch'
+    required: true
+    default: 'master'
+  code-checkout-folder-name:
+    description: 'Folder where code checkout will happen'
+    required: true
+    default: 'MyFirstRepo'
+  local-ansible-directory:
+    description: 'ansible folder'
+    required: true
+    default: 'ansible-local'
+  tarball_location:
+    description: 'ansible-collection-name'
+    required: true
+    default: 'collection-tarballs'
+# outputs:
+#   random-number:
+#     description: "Random number"
+#     value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: "composite"
+  steps:
+    - run: 
+          mkdir ${{ inputs.local-ansible-directory }}
+          git clone --depth 1 --branch ${{inputs.code-repo-branch}} ${{inputs.repo-to-pick-code-from}} ${{inputs.code-checkout-folder-name}}
+          cd ${{inputs.code-checkout-folder-name}}
+          # cp roles/deployment/render/defaults/main.yaml ../${{ inputs.local-ansible-directory }}/main.yaml
+          # ansible-galaxy collection build --force --output-path "../${{ inputs.local-ansible-directory }}/${{inputs.tarball_location}}"
+          # cd ..
+          # cp ${{inputs.code-checkout-folder-name}}/playbooks/* ${{ inputs.local-ansible-directory }}
+          # mkdir "${{ inputs.local-ansible-directory }}/plugins"
+          # mkdir "${{ inputs.local-ansible-directory }}/plugins/vars"
+          # mkdir "${{ inputs.local-ansible-directory }}/bin"
+          # cp ${{inputs.code-checkout-folder-name}}/plugins/vars/* "${{ inputs.local-ansible-directory }}/plugins/vars"
+          # cp ${{inputs.code-checkout-folder-name}}/bin/* "${{ inputs.local-ansible-directory }}/bin"
+      shell: bash
+
+name: Upload artifact
+uses: actions/upload-artifact@v3
+  with:
+    name: ansible-folder
+    path: ${{inputs.code-checkout-folder-name}}
+    # - id: random-number-generator
+    #   run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+    #   shell: bash
+    # - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+    #   shell: bash
+    # - run: goodbye.sh
+    #   shell: bash
