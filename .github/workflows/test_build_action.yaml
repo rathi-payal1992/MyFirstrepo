@@ -5,6 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Create ansible folder
     steps:
-      - uses: actions/MyFirstrepo@v1
+      - name: My first step - check out repository
+        uses: actions/checkout@v4
+      # This step references the directory that contains the action.
+      - name: Use local build ansible collection action
+        uses: ./.github/actions/build-ansible
+      
         
      
