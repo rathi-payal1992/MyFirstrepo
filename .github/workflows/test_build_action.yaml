@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: My first step - check out repository
         uses: actions/checkout@v4
-      # This step references the directory that contains the action.
+      # This step references the directory that contains the action
       - name: Use local build ansible collection action
-        uses: .github/actions/build-ansible@v2
+        uses: ./.github/actions/build-ansible
       
         
      
