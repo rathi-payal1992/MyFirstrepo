@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Create ansible folder
     steps:
-      - uses: MyFirstrepo@v1
+      - uses: actions/MyFirstrepo@v1
         
      
