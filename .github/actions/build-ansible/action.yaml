@@ -43,11 +43,11 @@ runs:
           # cp ${{inputs.code-checkout-folder-name}}/bin/* "${{ inputs.local-ansible-directory }}/bin"
       shell: bash
 
-name: Upload artifact
-uses: actions/upload-artifact@v3
-  with:
-    name: ansible-folder
-    path: ${{inputs.code-checkout-folder-name}}
+# name: Upload artifact
+# uses: actions/upload-artifact@v3
+#   with:
+#     name: ansible-folder
+#     path: ${{inputs.code-checkout-folder-name}}
     # - id: random-number-generator
     #   run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
     #   shell: bash
