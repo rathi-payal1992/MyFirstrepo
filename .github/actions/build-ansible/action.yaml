@@ -29,8 +29,8 @@ runs:
   using: "composite"
   steps:
     - run: 
-          mkdir ${{ inputs.local-ansible-directory }}
-          git clone --depth 1 --branch ${{inputs.code-repo-branch}} ${{inputs.repo-to-pick-code-from}} ${{inputs.code-checkout-folder-name}}
+          - mkdir ${{ inputs.local-ansible-directory }}
+          - git clone --depth 1 --branch ${{inputs.code-repo-branch}} ${{inputs.repo-to-pick-code-from}} ${{inputs.code-checkout-folder-name}}
           cd ${{inputs.code-checkout-folder-name}}
           # cp roles/deployment/render/defaults/main.yaml ../${{ inputs.local-ansible-directory }}/main.yaml
           # ansible-galaxy collection build --force --output-path "../${{ inputs.local-ansible-directory }}/${{inputs.tarball_location}}"
