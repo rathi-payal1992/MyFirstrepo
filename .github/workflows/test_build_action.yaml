@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   create_ansible-folder:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Create ansible folder
     steps:
       - uses: MyFirstrepo@v1
         
