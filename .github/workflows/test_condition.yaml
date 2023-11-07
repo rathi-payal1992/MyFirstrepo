@@ -1,4 +1,4 @@
-name: test pip cache
+name: test condition
 
 on: 
   workflow_dispatch:
