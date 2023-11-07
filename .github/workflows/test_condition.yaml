@@ -1,13 +1,23 @@
 name: test pip cache
 on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      Configure:
+        description: 'Define env name'     
+        required: true
+        default: S1
+    
 jobs:
-  production-deploy:
-    if: github.some_var == 'value1'
+  job-s2:
+    if: ${{ inputs.Confgure}} == 'S2' 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
+     
+       - run: echo "Running S2"
+  job-s1:
+    if: ${{ inputs.Confgure}} == 'S1' 
+    runs-on: ubuntu-latest
+    steps:
+     
+       - run: echo "Running S1"
