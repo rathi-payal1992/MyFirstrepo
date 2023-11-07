@@ -39,4 +39,4 @@ jobs:
         run: |
           pwd
           git branch
-          ansible-playbook test_ansible.yml
+          ansible-playbook test.yaml
