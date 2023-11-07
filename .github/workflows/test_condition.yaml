@@ -10,14 +10,14 @@ on:
     
 jobs:
   job-s2:
-    if: ${{ inputs.Confgure}} == 'S2' 
+    if: ${{ inputs.Configure}} == 'S2' 
     runs-on: ubuntu-latest
     steps:
      
-       - run: echo "Running S2 ${{ inputs.Confgure}}"
+       - run: echo "Running S2 ${{ inputs.Configure}}"
   job-s1:
-    if: ${{ inputs.Confgure}} == 'S1' 
+    if: ${{ inputs.Confgiure}} == 'S1' 
     runs-on: ubuntu-latest
     steps:
      
-       - run: echo "Running S1 ${{ inputs.Confgure}}"
+       - run: echo "Running S1 ${{ inputs.Configure}}"
