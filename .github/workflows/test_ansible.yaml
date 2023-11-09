@@ -2,8 +2,8 @@
 name: Setup and build
 
 on:
-  push:
-  workflow_call:
+  
+  workflow_dispatch:
 
 env:
   LOCAL_ANSIBLE_DIR: ansible-local
@@ -28,15 +28,20 @@ jobs:
   #       run: pip install -r requirements.txt
 
         
-  build:
+  release:
     runs-on: ubuntu-latest
     # needs: setup
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name : download ansible collection
+        uses: actions/download-artifact@v3
+        with:
+          name: ansible-collection
+      - name: Display structure of downloaded files
+        run: ls -R
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: First-Release
+          files: ansible-collection.gz
           
-      - name: Build Ansible collection
-        run: |
-          pwd
-          git branch
-          ansible-playbook test.yaml
+      
