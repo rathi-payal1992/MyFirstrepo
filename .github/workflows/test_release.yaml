@@ -1,5 +1,5 @@
 ---
-name: Setup and build
+name: download release
 
 on:
   
@@ -28,20 +28,13 @@ jobs:
   #       run: pip install -r requirements.txt
 
         
-  release:
+  download-release:
     runs-on: ubuntu-latest
     # needs: setup
     steps:
-      - name : download ansible collection
-        uses: actions/download-artifact@v3
-        with:
-          name: ansible-collection
-      - name: Display structure of downloaded files
-        run: ls -R
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: First-Release
-          files: ansible-collection.gz
+       - name: download
+         uses: pozetroninc/github-action-get-latest-release@master
+         with:
+          repository: rathi-payal1992/MyFirstrepo
           
       
