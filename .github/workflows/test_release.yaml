@@ -36,5 +36,7 @@ jobs:
          uses: pozetroninc/github-action-get-latest-release@master
          with:
           repository: rathi-payal1992/Ansible-Code
+       - name: list the files
+         run: ls -ltr   
           
       
