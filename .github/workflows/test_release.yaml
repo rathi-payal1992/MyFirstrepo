@@ -35,6 +35,6 @@ jobs:
        - name: download
          uses: pozetroninc/github-action-get-latest-release@master
          with:
-          repository: rathi-payal1992/MyFirstrepo
+          repository: rathi-payal1992/Ansible-Code
           
       
