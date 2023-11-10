@@ -4,10 +4,10 @@ list_of_environments=environments.split(",")
 for position, name in enumerate(list_of_environments):
     print(f"{name}: {position}")
     match name:
-        case S1:
+        case 'S1':
             print('this is S1')
             list_of_environments[position]='S1+whteverstrng'
-        case S2:
+        case 'S2':
             print('this is S2')
             list_of_environments[position]='S2+whteverstrng'
  
