@@ -48,5 +48,7 @@ jobs:
         with:
           repository: rathi-payal1992/Ansible-Code  # Replace with your existing repository
           ref: first_tag  # Replace with the specific release tag
+      - name: list the files
+        run: ls -ltr   
           
       
