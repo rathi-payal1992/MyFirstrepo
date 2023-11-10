@@ -13,7 +13,7 @@ jobs:
             backup_IFS="$IFS"
             IFS=','
             echo $env.environments
-            $arr = ($env.environments)
+            $arr = {$env.environments}
             $ for i in "${arr[@]}"; do echo $i; done
       
         
