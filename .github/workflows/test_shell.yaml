@@ -3,35 +3,16 @@ on: workflow_dispatch
 
 env: 
    environments: S1,S2
+   python_output: (S1 S2 S3 S4)
+
 
 jobs:
   traverse-an-array:
     runs-on: ubuntu-latest
     steps:
       - name: loop through an array
-        run: |
-            backup_IFS="$IFS"
-            IFS=','
-            echo $environments
-            read -a arr <<< $environments
-            for i in "${arr[@]}"; 
-            do 
-            #echo $i; 
-            case $i in
-            S1)
-            echo "This is S1"
-            ;;
-            S2)
-            echo "This is S2"
-            ;;
-            *)
-            echo 'wrong env name'
-            ;;
-            esac
-            
-
-            done
-            IFS="$bkpIFS";
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+      - run: python_output = python test_array.py
       
-        
-     
