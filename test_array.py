@@ -1,7 +1,7 @@
 import sys
 environments= sys.argv[1]
 list_of_environments=environments.split(",")
-def modify_array:
+def modify_array():
    for position, name in enumerate(list_of_environments):
        print(f"{name}: {position}")
        match name:
