@@ -17,4 +17,4 @@ for position, name in enumerate(list_of_environments):
         # If an exact match is not confirmed, this last case will be
         case _:
             print("Wrong env name")
-return list_of_environments
+#return list_of_environments
