@@ -3,7 +3,7 @@ on: workflow_dispatch
 
 env: 
    environments: S1,S2
-   $python_output: (S1 S2 S3 S4)
+   #python_output: (S1 S2 S3 S4)
 
 
 jobs:
