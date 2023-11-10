@@ -17,5 +17,6 @@ jobs:
         with:
           python-version: '3.10' 
       - run: |
-          python_output=$(python test_array.py "$environments")
+          # python_output=$(python test_array.py "$environments")
+          python test_array.py "$environments"
       
