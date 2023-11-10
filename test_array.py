@@ -20,8 +20,9 @@ def modify_array():
             print("Wrong env name")
    return list_of_environments
 
-def main():
-   modify_array()
-
-if __name__ == "__main__":
-    main()
+# def main():
+#    modify_array()
+# 
+# if __name__ == "__main__":
+    # main()
+modify_array()
