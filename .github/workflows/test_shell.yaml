@@ -16,7 +16,20 @@ jobs:
             read -a arr <<< $environments
             for i in "${arr[@]}"; 
             do 
-            echo $i; 
+            #echo $i; 
+            case $i in
+            S1)
+            echo "S1"
+            ;;
+            S2)
+            echo "S2"
+            ;;
+            *)
+            echo 'wrong env name'
+            ;;
+            esac
+            
+
             done
       
         
