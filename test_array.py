@@ -21,7 +21,7 @@ def modify_array():
    return list_of_environments
 
 def main():
-   return modify_array()
+   modify_array()
 
 if __name__ == "__main__":
     main()
