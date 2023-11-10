@@ -19,10 +19,10 @@ jobs:
             #echo $i; 
             case $i in
             S1)
-            echo "S1"
+            echo "This is S1"
             ;;
             S2)
-            echo "S2"
+            echo "This is S2"
             ;;
             *)
             echo 'wrong env name'
