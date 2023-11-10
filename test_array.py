@@ -16,7 +16,7 @@ def modify_array():
             # return "I'm a teapot"
 
         # If an exact match is not confirmed, this last case will be used if provided
-        case _:
+         case _:
             print("Wrong env name")
     return list_of_environments
 
