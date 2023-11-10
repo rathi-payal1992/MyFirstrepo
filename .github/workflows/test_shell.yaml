@@ -14,7 +14,7 @@ jobs:
             IFS=','
             echo $environments
             read -a arr <<< $environments
-            $ for i in "${arr[@]}"; do echo $i; done
+            for i in "${arr[@]}"; do echo $i; done
       
         
      
