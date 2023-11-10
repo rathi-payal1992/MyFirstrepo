@@ -28,15 +28,25 @@ jobs:
   #       run: pip install -r requirements.txt
 
         
-  download-release:
+  # download-release:
+  #   runs-on: ubuntu-latest
+  #   # needs: setup
+  #   steps:
+  #      - name: download
+  #        uses: pozetroninc/github-action-get-latest-release@master
+  #        with:
+  #         repository: rathi-payal1992/Ansible-Code
+  #      - name: list the files
+  #        run: ls -ltr   
+  
+  use-release:
     runs-on: ubuntu-latest
-    # needs: setup
+ 
     steps:
-       - name: download
-         uses: pozetroninc/github-action-get-latest-release@master
-         with:
-          repository: rathi-payal1992/Ansible-Code
-       - name: list the files
-         run: ls -ltr   
+      - name: Checkout existing Repository Release
+        uses: actions/checkout@v2
+        with:
+          repository: rathi-payal1992/Ansible-Code  # Replace with your existing repository
+          ref: first_tag  # Replace with the specific release tag
           
       
