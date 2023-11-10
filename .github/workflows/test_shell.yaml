@@ -1,0 +1,19 @@
+name: create and modify an array
+on: workflow_dispatch
+
+env: 
+   environments: S1,S2
+
+jobs:
+  traverse-an-array:
+    runs-on: ubuntu-latest
+    steps:
+      - name: loop through an array
+        run: |
+            backup_IFS="$IFS"
+            IFS=','
+            $arr = ($env.environment)
+            $ for i in "${arr[@]}"; do echo $i; done
+      
+        
+     
