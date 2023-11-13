@@ -26,7 +26,7 @@ jobs:
            $(python test_array.py "$environments") >> ${GITHUB_OUTPUT}
            #python test_array.py "$environments"
            # echo "::set-output name=python-list::$output"
-           echo $output
+           # echo $output
         
       - name: Print changelog
         run: echo "${{ steps.step1.outputs.OUTPUT_LIST }}"
