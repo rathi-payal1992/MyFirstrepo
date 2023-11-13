@@ -30,7 +30,7 @@ jobs:
            #python test_array.py "$environments"
            # echo "::set-output name=python-list::$output"
            # echo $output
-           echo "{name}=Payal" >> $GITHUB_OUTPUT
+           echo "name=Payal" >> $GITHUB_OUTPUT
         
       - name: Print changelog
         run: |
