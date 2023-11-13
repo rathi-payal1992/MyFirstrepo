@@ -5,8 +5,7 @@ env:
    environments: S1,S2
    #python_output: (S1 S2 S3 S4)
 
-output:
-   python-list
+
    
 
 
@@ -23,7 +22,7 @@ jobs:
       - run: |
            output=$(python test_array.py "$environments")
            #python test_array.py "$environments"
-           echo "$output"
+           echo "::set-output name=python-list::$output"
       - name: Print changelog
         run: echo "${{ steps.step1.outputs.python-list }}"
       
