@@ -26,4 +26,5 @@ def modify_array():
 # 
 # if __name__ == "__main__":
     # main()
-modify_array()
+ret=modify_array()
+os.system(f'echo "{'OUTPUT'}={ret} >> ${GITHUB_ENV}')
