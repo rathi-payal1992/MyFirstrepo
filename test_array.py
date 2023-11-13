@@ -32,6 +32,6 @@ ret=modify_array()
 #os.system(f'echo "OUTPUT_LIST="+ret >> $GITHUB_OUTPUT')
 #os.system(f'echo "OUTPUT_LIST=ret" >> $GITHUB_OUTPUT')
 with open(os.environ['GITHUB_OUTPUT'],'a') as fh:
-   print('OUTPUT_LIST=ret',file=fh)
+   print('OUTPUT_LIST='+ret,file=fh)
 #>> ${GITHUB_OUTPUT}
 #print(ret)
