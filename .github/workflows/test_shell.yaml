@@ -15,7 +15,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        
       - name: loop through an array
+        id: step1
         uses: actions/setup-python@v4
         with:
           python-version: '3.10' 
@@ -24,7 +26,6 @@ jobs:
            #python test_array.py "$environments"
            # echo "::set-output name=python-list::$output"
            echo $output
-      #   id: step1
-      # - name: Print changelog
-      #   run: echo "${{ steps.step1.outputs.python-list }}"
-      
+        
+      - name: Print changelog
+        run: echo "${{ steps.step1.outputs.OUTPUT_LIST }}"
