@@ -32,6 +32,7 @@ name_last='Rathi'
 #os.system(f'echo "OUTPUT_LIST="+ret >> $GITHUB_OUTPUT')
 #os.system(f'echo "OUTPUT_LIST=ret" >> $GITHUB_OUTPUT')
 with open(os.environ['GITHUB_OUTPUT'],'a') as fh:
-   print('OUTPUT_LIST='+name_last,file=fh)
+   print('OUTPUT_LIST_0='+ret[0],file=fh)
+   print('OUTPUT_LIST_1='+ret[1],file=fh)
 #>> ${GITHUB_OUTPUT}
 #print(ret)
