@@ -28,6 +28,6 @@ def modify_array():
 # if __name__ == "__main__":
     # main()
 ret=modify_array()
-os.system(f'echo "OUTPUT_LIST={ret}"')
+os.system(f'echo "OUTPUT_LIST={ret}" >> $GITHUB_OUTPUT')
 #>> ${GITHUB_OUTPUT}
 #print(ret)
