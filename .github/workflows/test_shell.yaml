@@ -36,3 +36,4 @@ jobs:
         run: |
           echo "${{ steps.step1.outputs.OUTPUT_LIST }}"
           echo "${{ steps.step1.outputs.name }}"
+          echo "${{ steps.step1.outputs.name_last }}"
