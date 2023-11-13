@@ -1,4 +1,5 @@
 import sys
+import os
 environments= sys.argv[1]
 list_of_environments=environments.split(",")
 def modify_array():
