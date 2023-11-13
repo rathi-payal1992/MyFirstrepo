@@ -29,7 +29,7 @@ def modify_array():
     # main()
 ret=modify_array()
 name_last='Rathi'
-os.system(f'echo "OUTPUT_LIST=name_last" >> $GITHUB_OUTPUT')
+os.system(f'echo "OUTPUT_LIST="+ret >> $GITHUB_OUTPUT')
 #os.system(f'echo "OUTPUT_LIST=ret" >> $GITHUB_OUTPUT')
 # with open(os.environ['GITHUB_OUTPUT'],'a') as fh:
 #    print('OUTPUT_LIST={ret}',file=fh)
