@@ -20,10 +20,10 @@ jobs:
         with:
           python-version: '3.10' 
       - run: |
-           export output=$(python test_array.py "$environments")
+           output=$(python test_array.py "$environments")
            #python test_array.py "$environments"
            # echo "::set-output name=python-list::$output"
-           echo $ouput
+           echo $output
       #   id: step1
       # - name: Print changelog
       #   run: echo "${{ steps.step1.outputs.python-list }}"
