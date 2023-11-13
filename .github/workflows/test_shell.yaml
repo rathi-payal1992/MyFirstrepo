@@ -17,11 +17,14 @@ jobs:
         uses: actions/checkout@v4
         
       - name: loop through an array
-        id: step1
+        
         uses: actions/setup-python@v4
         with:
           python-version: '3.10' 
-      - run: |
+      
+      - name: output list
+        id: step1
+        run: |
            #output=$(python test_array.py "$environments")
            python test_array.py "$environments"
            #python test_array.py "$environments"
