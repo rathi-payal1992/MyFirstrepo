@@ -23,7 +23,7 @@ jobs:
           python-version: '3.10' 
       - run: |
            #output=$(python test_array.py "$environments")
-           echo '$(python test_array.py "$environments")' >> ${GITHUB_OUTPUT}
+           echo $(python test_array.py "$environments") >> ${GITHUB_OUTPUT}
            #python test_array.py "$environments"
            # echo "::set-output name=python-list::$output"
            # echo $output
