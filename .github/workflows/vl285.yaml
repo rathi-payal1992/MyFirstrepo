@@ -1,0 +1,20 @@
+name: Vl285
+
+on: 
+  workflow_dispatch:
+
+env:
+ PING_ROWS: ""
+ PING_IN: ""
+ PING_ENV: FMO
+ PING_VERBOSE: 'False'
+ RUN_PING: 'True'
+    
+    
+jobs:
+  PING:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+             for var in RUN_PING "\"${PING_ROWS}\"" "\"${PING_IN}\"" "${PING_ENV}" "${PING_VERBOSE}"; do echo ${var}; done
+  
