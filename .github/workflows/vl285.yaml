@@ -1,7 +1,9 @@
 name: Vl285
 
-on: 
-  workflow_dispatch:
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+    
 
 env:
  PING_ROWS: ""
