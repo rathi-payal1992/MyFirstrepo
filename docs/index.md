@@ -6,7 +6,7 @@
 
 * Go to github.com and click on signup
 
-![image info](./docs/images/github_1.png)
+![image info](./images/github_1.png)
 
 * Enter your personal email address and create a password
 
