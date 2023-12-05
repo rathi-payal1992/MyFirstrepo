@@ -6,7 +6,7 @@
 
 * Go to github.com and click on signup
 
-![alt text](https://github.com/rathi-payal1992/MyFirstrepo/blob/master/docs/images/github_1.png)
+![image info](./docs/images/github_1.png)
 
 * Enter your personal email address and create a password
 
