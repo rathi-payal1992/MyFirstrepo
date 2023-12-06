@@ -10,7 +10,11 @@
 
 * Enter your personal email address and create a password
 
+  ![image info](./images/github_2.png)
+
 * Once signed in, click on new to create first repository
+
+  ![image info](./images/github_3.png)
 
 You have sucessfully create your first repo.
 
@@ -20,9 +24,15 @@ You have sucessfully create your first repo.
 
 * once downloaded, run the installer and install with default options.
 
-* Once installed, launch Git Bash by typing 'git bash' in widnows search 
+* Once installed, launch Git Bash by typing 'git bash' in widnows search
+
+  ![image info](./images/github_4.png)
 
 * You should now be able to run all the git commands in git bash.
+
+  ![image info](./images/github_5.png)
+
+  ![image info](./images/github_6.png)
 
 
 
