@@ -1,4 +1,5 @@
- ## Setting up Git bash and personal GitHub repository to practice git commands
+  Setting up Git bash and personal GitHub repository to practice git commands
+  ===========================================================================
 
  To be able to practice frequently used git commands locally one can use a personal github repo and then have git bash shell environment to interact with that repo.
 
