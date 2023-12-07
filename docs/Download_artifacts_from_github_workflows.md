@@ -2,7 +2,7 @@
 
 GitHub workflows can create artifacts after the workflow run is sucussefully completed
 
-**Note**: An artifact will be available only after the entire workflow run is completed 
+**Note**: _An artifact will be available only after the entire workflow run is completed_ 
 
 Follow the steps below to download an artifact:
 
@@ -23,7 +23,7 @@ Follow the steps below to download an artifact:
 [click_artifacts_name]: ./images/artifact_doc_4.png
 
 
-**Note**: The retention period of artifacts, set up by the Automation team, is one day currently.
+**Note**: _The retention period of artifacts, set up by the Automation team, is one day currently.
 Which means the artifact will only be available for download for a day since when the workflow was 
-triggered. 
+triggered._ 
 
