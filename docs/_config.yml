@@ -34,7 +34,7 @@ github_username:  jekyll
 # theme: minima
 # plugins:
   # - jekyll-feed
-theme: just-the-docs
+remote-theme: just-the-docs/just-the-docs
   
 
 
